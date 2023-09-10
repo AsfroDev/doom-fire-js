@@ -63,7 +63,7 @@ function debugToogle() {
   } else {
     debug = false;
     fireWidth = 40;
-    fireHeight = 4;
+    fireHeight = 40;
 
     let picture = document.querySelector("#picture");
     picture.setAttribute(
