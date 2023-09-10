@@ -38,14 +38,14 @@ const fireColorsPalette = [
   { r: 239, g: 239, b: 199 },
   { r: 255, g: 255, b: 255 },
 ];
-let debug = false;
-let fireWidth = 40;
-let fireHeight = 40;
-let fireIntensityControl = 6
+debug = false;
+fireWidth = 40;
+fireHeight = 40;
+fireIntensityControl = 6;
 
-//buttons actions
+//Main Actions
 function reset() {
-  fireIntensityControl = 6
+  fireIntensityControl = 6;
   createFireDataStructure();
   createFireSource();
 }
@@ -57,13 +57,10 @@ function debugToogle() {
     fireHeight = 30;
 
     let picture = document.querySelector("#picture");
-    picture.setAttribute(
-      "style",
-      "padding-top: 0px; background-color: none;"
-    );
+    picture.setAttribute("style", "padding-top: 0px; background-color: none;");
 
-    let btn = document.querySelector("#debug_btn")
-    btn.innerHTML = "Desativar Debug"
+    let btn = document.querySelector("#debug_btn");
+    btn.innerHTML = "Desativar Debug";
 
     reset();
   } else {
@@ -77,8 +74,8 @@ function debugToogle() {
       "padding-top: 30px; background-color: black;"
     );
 
-    let btn = document.querySelector("#debug_btn")
-    btn.innerHTML = "Ativar Debug"
+    let btn = document.querySelector("#debug_btn");
+    btn.innerHTML = "Ativar Debug";
 
     reset();
   }
@@ -88,9 +85,9 @@ function moreIntensity() {
   if (fireIntensityControl <= 3) {
     return;
   } else {
-    fireIntensityControl = fireIntensityControl -2
+    fireIntensityControl -= 2;
     if (fireIntensityControl < 3) {
-      fireIntensityControl = 3
+      fireIntensityControl = 3;
     }
   }
 }
@@ -99,17 +96,14 @@ function lessIntensity() {
   if (fireIntensityControl >= 12) {
     return;
   } else {
-    fireIntensityControl = fireIntensityControl +2
+    fireIntensityControl += 2;
   }
 }
 
 //main structure
 function start() {
-    let picture = document.querySelector("#picture");
-    picture.setAttribute(
-      "style",
-      "padding-top: 30px; background-color: black;"
-    );
+  let picture = document.querySelector("#picture");
+  picture.setAttribute("style", "padding-top: 30px; background-color: black;");
 
   createFireDataStructure();
   createFireSource();
