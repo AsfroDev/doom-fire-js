@@ -1,0 +1,99 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    border: 0;
+    user-select: none;
+}
+
+body {
+    user-select: none;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 10px;
+    padding-top: 10vh;
+    background-color: #EEEEEE;
+    padding-bottom: 30px;
+}
+
+section {
+    font-size: 2em;
+    text-transform: uppercase;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.151);
+}
+
+div {
+    max-width: 400px;
+    text-align: center;
+}
+
+p {
+    margin-bottom: 5px;
+}
+
+a {
+    text-decoration: none;
+    color: rgba(0, 0, 0, 0.700);
+    font-style: italic;
+}
+
+a:hover {
+    color: rgba(0, 0, 0, 0.900);
+    text-decoration: underline;
+}
+
+main {
+    border: 1px solid rgba(0, 0, 0, 0.151);
+}
+
+table {
+    border-collapse: collapse;
+    border: 1px solid #000;
+    border: none;
+}
+
+td {
+    width: 50px;
+    height: 50px;
+    border: 1px solid #000;
+    text-align: center;
+    vertical-align: center;
+    font-family: monospace;
+    font-size: 18px;
+    position: relative;
+}
+
+td.pixel {
+    width: 4px;
+    height: 4px;
+    border: 0;
+}
+
+.pixel-index {
+    font-size: 10px;
+    display: inline-block;
+    position: absolute;
+    top: 2px;
+    right: 2px;
+    color: #999;
+}
+
+.buttons {
+    display: flex;
+    flex-direction: row;
+    gap: 10px;
+}
+
+button {
+    border: 1px solid rgba(0, 0, 0, 0.151);
+    padding: 10px;
+    border-radius: 4px;
+    cursor: pointer;
+    color: #000000c7;
+}
+
+button:hover {
+    color: #000;
+}
