@@ -41,8 +41,11 @@ const fireColorsPalette = [
 let debug = false;
 let fireWidth = 40;
 let fireHeight = 40;
+let fireIntensityControl = 6
 
+//buttons actions
 function reset() {
+  fireIntensityControl = 6
   createFireDataStructure();
   createFireSource();
 }
@@ -59,6 +62,9 @@ function debugToogle() {
       "padding-top: 0px; background-color: none;"
     );
 
+    let btn = document.querySelector("#debug_btn")
+    btn.innerHTML = "Desativar Debug"
+
     reset();
   } else {
     debug = false;
@@ -71,10 +77,33 @@ function debugToogle() {
       "padding-top: 30px; background-color: black;"
     );
 
+    let btn = document.querySelector("#debug_btn")
+    btn.innerHTML = "Ativar Debug"
+
     reset();
   }
 }
 
+function moreIntensity() {
+  if (fireIntensityControl <= 3) {
+    return;
+  } else {
+    fireIntensityControl = fireIntensityControl -2
+    if (fireIntensityControl < 3) {
+      fireIntensityControl = 3
+    }
+  }
+}
+
+function lessIntensity() {
+  if (fireIntensityControl >= 12) {
+    return;
+  } else {
+    fireIntensityControl = fireIntensityControl +2
+  }
+}
+
+//main structure
 function start() {
     let picture = document.querySelector("#picture");
     picture.setAttribute(
@@ -116,7 +145,7 @@ function updateFireIntensityPerPixel(currentPixelIndex) {
     return;
   }
 
-  const decay = Math.floor(Math.random() * 3);
+  const decay = Math.floor(Math.random() * fireIntensityControl);
   const belowPixelFireIntensity = firePixelsArray[belowPixelIndex];
   const newFireIntensity =
     belowPixelFireIntensity - decay >= 0 ? belowPixelFireIntensity - decay : 0;

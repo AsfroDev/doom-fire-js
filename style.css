@@ -45,6 +45,7 @@ a:hover {
 }
 
 main {
+    height: 100%;
     border: 1px solid rgba(0, 0, 0, 0.151);
 }
 
@@ -83,7 +84,16 @@ td.pixel {
 .buttons {
     display: flex;
     flex-direction: row;
-    gap: 10px;
+    gap: 10px 18px;
+    flex-wrap: wrap;
+    max-width: 160px;
+    justify-content: center;
+}
+
+#debug_btn{
+    width: 95%;
+    opacity: 60%;
+    border-radius: 0;
 }
 
 button {
